@@ -1,0 +1,127 @@
+#Contact{
+    font-family: var(--Gotham);
+}
+#Contact .main .container{
+    display: flex;
+    justify-content: space-between;
+}
+#Contact  .main .container .right{
+    width: 610px;
+    background-color: var(--white-blue);
+    border: 1px solid var(--main-color);
+    padding: 25px;
+}
+#Contact  .main .container .left{
+    width: 484px;
+}
+#Contact .main .how{
+    font-size: 48px;
+    color: var(--main-color);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+#Contact .main .contacts{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 18px;
+    color: var(--grey);
+    margin-bottom: 20px;
+}
+#Contact .main .contact{
+    display: flex;
+    align-items: center;
+    line-height: 30px;
+    gap: 15px;
+}
+
+#Contact .main .socials{
+    display: flex;
+    gap: 15px;
+}
+#Contact .main .socials img{
+    width: 50px;
+}
+#Contact  .main .right .group{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: var(--grey);
+}
+#Contact .main .right input{
+    height: 56px;
+    width: 100%;
+    padding-left: 10px;
+    color: #bebebe;
+    border: 1px solid #bebebe;
+}
+#Contact .main .right textarea{
+    width: 100%;
+    padding: 10px;
+    height: 286px;
+    border: 1px solid #bebebe;
+}
+#Contact .main .right .choose{
+    display: flex;
+    gap: 30px;
+}
+#Contact .main .right .choice{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+#Contact .main .right .choose .big{
+    width: 24px;
+    height: 24px;
+    border: 1px solid #bebebe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#Contact .main .right .choose .selected{
+    border: 1px solid var(--main-color);
+}
+#Contact .main .right .choose .selected div{
+    width: 16px;
+    height: 16px;
+    background-color: var(--main-color);
+}
+#Contact .main .right button{
+    height: 56px;
+    background-color: var(--main-color);
+    border: none;
+    width: 100%;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+}
+#Contact .main .right button img{
+    filter: invert(1);
+    width: 20px;
+}
+@media(max-width: 700px){
+    #Contact .main .container{
+        flex-direction: column;
+        gap: 30px;
+    }
+    #Contact  .main .container .right{
+        width: 100%;
+        padding: 10px;
+    }
+    #Contact  .main .container .left{
+        width: 100%;
+    }
+    #Contact .main .how{
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    #Contact .main .contacts{
+        gap: 18px;
+        font-size: 16px;
+        margin-bottom: 18px;
+    }
+}

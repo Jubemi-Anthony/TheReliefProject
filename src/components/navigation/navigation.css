@@ -1,0 +1,104 @@
+header{
+    padding: 10px 0;
+}
+header .container{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--main-color);
+    padding-bottom: 20px;
+}
+header .logo{
+    width: 10%;
+}
+nav{
+    display: flex;
+    gap: 50px;
+}
+nav a{
+    color: var(--black);
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+header button{
+    background-color: var(--main-color);
+    color: var(--white);
+    border: none;
+    width: 150px;
+    height: 48px;
+}
+header .right{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+header .cart{
+    position: relative;
+}
+header .cart div{
+    font-size: 13px;
+    width: 19px;
+    height: 19px;
+    background-color: var(--primary-color);
+    border-radius: 50px;
+    border: none;
+    display: flex;
+    color: var(--white);
+    padding: 2px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+header .burger, #small-screen{
+    display: none;
+}
+@media(max-width: 700px){
+    header{
+        position: relative;
+    }
+    header .container{
+        padding-bottom: 10px;
+    }
+    header button{
+        background-color: var(--primary-color);
+        color: var(--white);
+        border: none;
+        width: 100%;
+        height: 48px;
+    }
+    header .logo{
+        width: 30%;
+    }
+    nav,#big-sign{
+        display: none;
+    }   
+    header .burger{
+        display: block;
+        width: 50px;
+        height: 50px;
+    }
+    #small-screen{
+        display: block;
+        background-color: var(--main-color);
+        position: absolute;
+        right: 0;
+        top: 60px;
+        text-align: right;
+        padding: 10px;
+    }
+    #small-screen a{
+        color: var(--white);
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 9px;
+        border-bottom: 1px solid var(--white);
+    }
+    #small-screen button{
+        width: 100px;
+        height: 30px;
+    }
+}

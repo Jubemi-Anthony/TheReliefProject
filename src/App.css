@@ -1,0 +1,60 @@
+:root {
+  --main-color: #FF9A00;
+  --primary-color:#b46e05;
+  --white: #fff;
+  --grey: #4F4E4E;
+  --white-blue: rgba(255, 153, 0, 0.1);
+  --white-variant1: #FCFCFC;
+  --black: #2b2b2b;
+  --Gotham: 'Gotham', sans-serif;
+  --Mecury: 'Mecury Display';
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container{
+  width: 90%;
+  margin: auto;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--color-1);
+}
+#body{
+  overflow-x: hidden;
+}
+a{
+  text-decoration: none;
+}
+ul{
+  list-style: none;
+}
+.getStarted{
+    background-color: var(--main-color);
+    border: none;
+    border-radius: 15px;
+    color: var(--white);
+    font-weight: bold;
+    font-size: var(--normal);
+    width: 200px;
+    padding: 10px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--Gotham);
+}
+@media(max-width: 700px){
+  #GET{
+    width: fit-content;
+    padding: 0 15px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+}

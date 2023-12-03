@@ -1,0 +1,73 @@
+#Volunteer{
+    font-family: var(--Gotham);
+}
+#Volunteer .containerW{
+    width: 95%;
+    margin: auto;
+}
+#Volunteer h1{
+    font-size: var(--big);
+}
+#Volunteer .excited{
+    font-family: var(--Mecury);
+    font-size: 32px;
+    margin: 20px 0;
+}
+#Volunteer .sec-1 form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+    width: 100%;
+}
+#Volunteer .sec-1 form div{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+#Volunteer .sec-1 form input{
+    height: 84px;
+}
+#Volunteer .sec-1 form textarea{
+    height: 140px;
+}
+#Volunteer .sec-1 form input,
+#Volunteer .sec-1 form textarea{
+    background-color: var(--white-blue);
+    border: none;
+    border-left: 4px solid var(--main-color);
+    padding: 5px;
+    width: 100%;
+    outline: none;
+}
+#Volunteer .sec-1 form button{
+    background-color: transparent;
+    border: none;
+    color:var(--main-color);
+    border-top: 4px solid var(--main-color);
+    border-bottom: 4px solid var(--main-color);
+    width: fit-content;
+    font-size: 28px;
+    padding: 10px 15px;
+    font-weight: bold;
+}
+@media(max-width: 700px){
+    #Volunteer h1{
+        font-size: 3rem;
+    }
+    #Volunteer .excited{
+        font-size: 1.6rem;
+    }
+    #Volunteer .sec-1 form div{
+        flex-direction: column;
+    }
+    #Volunteer .sec-1 form input{
+        height: 60px;
+    }
+    #Volunteer .sec-1 form textarea{
+        height: 120px;
+    }
+    #Volunteer .sec-1 form button{
+        width: 100%;
+    }
+}

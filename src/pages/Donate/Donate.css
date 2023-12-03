@@ -1,0 +1,237 @@
+:root{
+    --bottom: 1.7vh;
+    --height: 7.5vh;
+}
+#Donate{
+    font-family: var(--Gotham);
+}
+#Donate .main-left .container{
+    width: 80%;
+}
+#Donate .main-left{
+    width: 60vw;
+    padding-top: 30px;
+}
+#Donate .main-left .top-head img{
+    width: 100px;
+}
+#Donate .main-body h1{
+    margin-top: 10px;
+    font-size: 3rem;
+}
+#Donate .main-body .range{
+    background-color: var(--white-blue);
+    width: 100%;
+    height: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+#Donate .main-body .gotten{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+#Donate .main-body .gotten p:first-child{
+    font-weight: bold;
+}
+#Donate .main-body .gotten span{
+    font-weight: normal;
+}
+#Donate .main-body .range .value{
+    background-color: var(--main-color);
+    height: 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+#Donate .main-body .me-an0{
+    width: 100%;
+    margin: 30px 0;
+}
+#Donate .talks{
+    font-size: 1.1rem;
+    line-height: 1.6em;
+    margin-bottom: 30px;
+}
+#Donate .end-body{
+    padding-bottom: 30px;
+}
+#Donate .end-body h3{
+    margin-bottom: 20px;
+}
+#Donate .donations000{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+#Donate .donations000 .s000{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    border: 1px solid rgb(238, 237, 237);
+    padding: 0 10px;
+    height: var(--height);
+    border-radius: 10px;
+    font-weight: 300;
+}
+#Donate .s000 p:last-child{
+    color: var(--main-color);
+    font-weight: 600;
+}
+#Donate .s000 p:first-child span{
+    font-weight: bold;
+}
+#Donate aside{
+    width: 40vw;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.1);
+}
+#Donate aside .container{
+    width: 80%;
+    margin: auto;
+    padding: 30px 0;
+}
+#Donate aside .h3{
+    font-weight: 600;
+    margin-bottom: 3vh;
+    font-size: 1.2rem;
+}
+#Donate aside button img{
+    width: 25px; height: 25px;
+}
+#Donate aside button{
+    background-color: transparent;
+    border: 1px solid rgb(211, 211, 211);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    width: 10vw;
+    height: var(--height);
+    border-radius: 15px;
+    gap: 5px;
+}
+#Donate aside .top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--bottom);
+    width: 100%;
+}
+#Donate aside .top button{
+    width: 15vw;
+}
+#Donate aside .middle{
+    width: 100%;
+    display: grid;
+    grid-gap: var(--bottom);
+    grid-row-gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: var(--bottom);
+}
+#Donate aside .inputs input, #Donate aside textarea{
+    border: 1px solid rgb(211, 211, 211);
+    height: var(--height);
+    border-radius: 15px;
+    padding-left: 1vw;
+    margin-bottom: var(--bottom);
+    width: 100%;
+}
+#Donate aside textarea{
+    margin-top: var(--bottom);
+    height: 100px;
+    padding-top: 10px;
+    font-size: 1rem;
+}
+#Donate aside .submit{
+    background-color: var(--main-color);
+    width: 100%;
+    color: var(--white);
+    border: none;
+}
+#Donate aside .end{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgb(211, 211, 211);
+    height: var(--height);
+    border-radius: 15px;
+    padding: 0 1vw;
+    gap: 5px;
+    margin-bottom: var(--bottom);
+}
+#Donate aside .end input{
+    width: 100%;
+    border: none;
+}
+#Donate aside .end p{
+    color: rgb(84, 84, 84);
+    font-weight: bold;
+}
+#Donate aside .end input:focus{
+    outline: none;
+}
+#Donate .matching{
+    border-color: var(--main-color);
+    box-shadow: -1px 1px 10px #ff990075;
+}
+@media(max-width: 700px){
+    #Donate #big-donate{
+        display: none;
+    }
+    #Donate .main-left .container{
+        width: 90%;
+    }
+    #Donate .main-left{
+        width: 100vw;
+    }
+    #Donate .main-left .top-head img{
+        width: 110px;
+    }
+    #Donate .main-body h1{
+        margin-top: 10px;
+        font-size: 2rem;
+    }
+    #Donate .main-body .gotten{
+        font-size: 1.3rem;
+    }
+    #Donate .end-body{
+        padding-bottom: 11vh;
+    }
+    #Donate aside{
+        width: 100vw;
+        position: static;
+        box-shadow: none;
+    }
+    #Donate aside .container{
+        width: 90%;
+    }
+    #Donate aside button{
+        width: 27vw;
+    }
+    #Donate aside .top button{
+        width: 40vw;
+    }
+    #Donate aside textarea{
+        height: 150px;
+    }
+    #Donate .submit2{
+        background-color: var(--main-color);
+        width: 90%;
+        color: var(--white);
+        border: none;
+        height: var(--height);
+        position: fixed;
+        bottom: 10px;
+        left: 5%;
+        border-radius: 15px;
+    }
+    #Donate .icon{
+        width: 50px;
+    }
+}

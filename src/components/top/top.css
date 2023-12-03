@@ -1,0 +1,15 @@
+#TOP{
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    font-size: 54px;
+    color: var(--white);
+}
+@media(max-width: 700px){
+    #TOP{
+        height: 25vh;
+        font-size: 28px;
+    }
+}
