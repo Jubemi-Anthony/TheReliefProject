@@ -6,6 +6,8 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import RecentProjects from "../../components/RecentProjects";
 import { useRef, useState, useEffect } from "react";
+import Stats from "../../components/Stats";
+import Part from "../../components/Part";
 
 const Home = ({setScrollI, scrollI, setScrollJ}, props) => {  
   const aboutRef = useRef(null);
@@ -71,18 +73,18 @@ const Home = ({setScrollI, scrollI, setScrollJ}, props) => {
                         Contact Us
                     </Link>
                 </div>
-            </nav>
-            <div className="right">
+                <div className="right">
                 <div onClick={()=> setShow(!show)} className="burger">
-                <img onClick={()=> setShow(!show)} id="toggle" src={show === true ? 'https://cdn1.iconfinder.com/data/icons/chunk/16/X-64.png' : 'https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-64.png'} alt="close/open" />
-                </div>
-                <Link to="/volunteer">
-                    <button id="big-sign">
-                        Become A Volunteer
-                    </button>
-                </Link>
-                
-            </div>
+                  <img onClick={()=> setShow(!show)} id="toggle" src={show === true ? 'https://cdn1.iconfinder.com/data/icons/chunk/16/X-64.png' : 'https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-64.png'} alt="close/open" />
+                  </div>
+                    <Link to="/volunteer">
+                        <button id="big-sign">
+                            Become A Volunteer
+                        </button>
+                    </Link>
+                  </div>
+            </nav>
+            
             </div>
             {
                 show && 
@@ -141,71 +143,64 @@ const Home = ({setScrollI, scrollI, setScrollJ}, props) => {
           <iframe src="https://drive.google.com/file/d/1hkHwXaJM1ZgSLjuOC-RGdaRIqdFilLyt/preview" width="90%" height="300" allow="autoplay"></iframe>
         </section>
         </div>
-        
-        <section className="sec-2">
-        <div className="left">
-          <div ref={aboutRef} className="container">
-          <p>Who We Are</p>
-          <p>We are The <span>Relief</span> Team</p>
-          <p>We are a team of individuals who serve and give-of ourselves and our resources. We are employees and employers of  labor, men, women and youth. <br /> We are ordinary people who have chosen to make an extraordinary difference </p>
-          </div>
-        </div>
-        <div className="right">
-          <img src="./assets/sec-2.png" alt="people" />
-        </div>
-      </section>
         <section className="sec-4">
+          <div ref={aboutRef} className="container">
+          <div className="hold hold-2">
+              <Leads
+                title={'Who We Are'}
+                head="We are The Relief Team"
+                first="We are a team of individuals who serve and give-of ourselves and our resources. We are employees and employers of  labor, men, women and youth."
+                second="We are ordinary people who have chosen to make an extraordinary difference"
+              />
+              <img src="./assets/sec-2.png" alt="Man" className="image" />
+            </div>
+          </div>
           <div ref={doRef} className="container">
-            <h2>What We Do</h2>
-            <div className="hold">
+            <div className="hold oran">
               <img src="./assets/wwd1.png" alt="Man" className="image" />
               <Leads
-                head="Women and Child Welfare"
+                title={'Women and Child Welfare'}
                 first="While our relief projects benefit the entire community, we prioritize addressing the unique needs of women and children in riverine communities. Recognizing their vulnerabilities, our interventions are designed to enhance the well-being and resilience of these populations."
               />
             </div>
-            <div className="hold hold-2">
+            <div className="hold oran hold-2">
               <Leads
-                head="Health and Well-being"
+                title={'Health and Well-being'}
                 first="Supporting healthcare initiatives is crucial for enhancing community well-being. As advocated for body and mind wellness, we invite trained medical personnel to drive medical outreaches at our communities."
                 second="Our commitment extends to proactive measures like vaccinations and disease prevention to safeguard the overall health of the communities."
               />
               <img src="./assets/wwd2.png" alt="Man" className="image" />
             </div>
-            <div className="hold">
+            <div className="hold oran">
               <img src="./assets/wwd3.png" alt="Man" className="image" />
               <Leads
-                head="Education and Empowerment"
+                title={'Education and Empowerment'}
                 first="In keeping with our commitment to enhance individual and collective growth, vocational empowerment and educational scholarships are provided to the indigents as available."
               />
             </div>
-            <div className="hold hold-2">
+            <div className="hold oran hold-2">
               <Leads
-                head={`Transforming Lives, One Act of Kindness at a Time`}
+                title={'Transforming Lives, One Act of Kindness at a Time'}
                 first="The world is desperately in need of humanity, and for those who are struggling to make ends meet, hoping for a joy break, or even trying to find some meaning, we try our best to be there. We take every opportunity to invest joy into the lives of the people we come across; whether through a christmas party, a listening ear, or an offer of employment."
                 second="At The Relief Project, we are committed to being humane."
               />
               <img src="./assets/xpp82.png" alt="Man" className="image" />
             </div>
+            <div ref={whatRef} className="hold">
+              <img id="imagee" src="./assets/hope.png" alt="Man" className="image" />
+              <Leads
+                title={'What do we hope to Achieve?'}
+                first="To empower women and children in low-income communities to be all that they can be, at school, at home and in their day to day activities"
+              />
+            </div>
           </div>
         </section>
-        <section className="sec-5">
-        <div className="left">
-          <div ref={whatRef} className="container">
-          <p>What do we hope to Achieve?</p>
-          <p>To empower women and children in low-income communities to be all that they can be, at school, at home and in their day to day activities</p>
-          </div>
-        </div>
-        <div className="right">
-          <img src="./assets/hope.png" alt="people" />
-        </div>
-      </section>
         <section className="sec-j">
           <div className="container">
             <div className="stats">
-              <div className="stat"> <p>8+</p> <p>Communities</p> </div>
-              <div className="stat"> <p>5k+</p> <p>Indigents</p> </div>
-              <div className="stat"> <p>40+</p> <p>Volunteers</p> </div>
+              <Stats number={8-1} text={'Communities'}/>
+              <Stats number={5-1} text={'Indigents'}/>
+              <Stats number={40-1} text={'Volunteers'}/>
             </div>
           </div>
         </section>
@@ -216,14 +211,31 @@ const Home = ({setScrollI, scrollI, setScrollJ}, props) => {
               <Capabilities image="./assets/v1.png" head="Love" text="Embracing compassion and empathy, we believe in the transformative power of love. It is the driving force behind every action, creating a positive impact on the lives of those in need." />
               <Capabilities image="./assets/v2.png" head="Service" text="Committed to selfless service, we dedicate ourselves to uplifting communities. Through acts of kindness and dedication, we strive to make a meaningful difference in the lives of the underserved." />
               <Capabilities image="./assets/v3.png" head="Equality" text="Advocating for justice and fairness, we stand firmly for equality. Everyone deserves access to opportunities, resources, and respect, fostering a world where every individual is valued."/>
+            </div>
+            <div className="flex">
               <Capabilities image="./assets/v4.png" head="Community" text="Nurturing a sense of belonging, we celebrate the strength of community. Together, we create supportive networks that empower individuals and foster an environment where everyone can thrive." />
               <Capabilities image="./assets/v5.png" head="Collaboration" text="Believing in the power of teamwork, we actively collaborate with partners and communities. Through shared efforts, we amplify our impact, working hand in hand to create lasting positive change." />
             </div>
           </div>
         </section>
+        <section className="sec-q">
+          <div className="container">
+            <h6 id="ooo">Our Partners</h6>
+          </div>
+            <marquee>
+            <div className="part">
+            <Part img="./assets/partners/molfix.jpeg" text="Molfix"/>
+            <Part img="./assets/partners/moped.jpeg" text="Moped"/>
+            <Part img="./assets/partners/LOGO.svg" text="My Medicine"/>
+            <Part img="./assets/partners/sanitary.jpeg" text="SanitaryAid"/>
+            <Part img="./assets/partners/advantage.jpeg" text="Advantage Health Africa"/>
+            </div>
+            </marquee>
+        </section>
+        <div id="paul"></div>
         <section className="sec-4">
         <div className="container">
-          <h2>Our Work So Far</h2>
+          <h2  style={{textAlign: 'center', marginBottom: '20px'}}>Our Work So Far</h2>
           <p className="weThe">Some of Our Popular <span>Causes</span></p>
         </div>
         <div className="container-1">
