@@ -2,7 +2,7 @@
     --bottom: 1.7vh;
     --height: 7.5vh;
 }
-#Donate{
+#Donate, #Donate button, #Donate input, #Donate textarea{
     font-family: var(--Gotham);
 }
 #Donate .main-left .container{
@@ -180,6 +180,9 @@
     border-color: var(--main-color);
     box-shadow: -1px 1px 10px #ff990075;
 }
+#Donate .submit2{
+    display: none;
+}
 @media(max-width: 700px){
     #Donate #big-donate{
         display: none;
@@ -211,6 +214,7 @@
     #Donate aside .container{
         width: 90%;
     }
+
     #Donate aside button{
         width: 27vw;
     }
@@ -221,6 +225,7 @@
         height: 150px;
     }
     #Donate .submit2{
+        display: block;
         background-color: var(--main-color);
         width: 90%;
         color: var(--white);

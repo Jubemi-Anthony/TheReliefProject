@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
 import Footer from '../../components/footer/Footer'
 import "./Volunteer.css";
-import { Link } from 'react-router-dom';
 import "../../Data/firebaseConfig";
 import{getFirestore, addDoc, collection} from "firebase/firestore";
 import Modal from '../../components/Modal/Modal';
+import Header from "../../components/navigation/Navigation";
+
 
 const Volunteer = ({setScrollI,setScrollJ}) => {
     const [loading, setLoading] = useState('blank');
@@ -43,9 +44,10 @@ const Volunteer = ({setScrollI,setScrollJ}) => {
 
   return (
     <main id='Volunteer'>
+        <Header setScrollI={setScrollI} active={'Volunteer'}/>
         {loading !== 'blank' && <Modal setLoading={setLoading} loading={loading} text={'Thank you for Volunteering'}/>}
         <div className="containerW">
-        <Link to="/"><img src="./assets/logo2.png" alt="" /></Link>
+        {/* <Link to="/"><img src="./assets/logo2.png" alt="" /></Link> */}
         <section className="sec-1">
             <h1>Become a Volunteer today!</h1>
             <p className='excited'>We are excited for you to join our community of volunteers. <br />Please complete the form below to join us and become a volunteer.</p>

@@ -4,10 +4,10 @@ import "./Home.css";
 import { Link } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import RecentProjects from "../../components/RecentProjects";
+import RecentProjects from "../../components/about/RecentProjects";
 import { useRef, useState, useEffect } from "react";
-import Stats from "../../components/Stats";
-import Part from "../../components/Part";
+import Stats from "../../components/about/Stats";
+import Part from "../../components/about/Part";
 
 const Home = ({setScrollI, scrollI, setScrollJ}, props) => {  
   const aboutRef = useRef(null);
@@ -51,32 +51,29 @@ const Home = ({setScrollI, scrollI, setScrollJ}, props) => {
     <main id="About">
         <header>
             <div className="container">
-            <img src="./assets/logo2.png" alt="logo" className="logo" />
+            <img src="./assets/logo.png" alt="logo" className="logo" />
             <nav>
-                <div>
+                <div className="active">
                     <Link to="/">
                         Home
                     </Link>
                 </div>
-                <div onClick={()=>setScrollI('who')}>
+                <div className="notActive" onClick={()=>setScrollI('who')}>
                     <Link>
                         About Us
                     </Link>
                 </div>
-                <div>
+                <div className="notActive">
                     <Link to="/project">
                         Projects
                     </Link>
                 </div>
-                <div>
+                <div className="notActive">
                     <Link to="/contact">
                         Contact Us
                     </Link>
                 </div>
                 <div className="right">
-                <div onClick={()=> setShow(!show)} className="burger">
-                  <img onClick={()=> setShow(!show)} id="toggle" src={show === true ? 'https://cdn1.iconfinder.com/data/icons/chunk/16/X-64.png' : 'https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-64.png'} alt="close/open" />
-                  </div>
                     <Link to="/volunteer">
                         <button id="big-sign">
                             Become A Volunteer
@@ -84,11 +81,11 @@ const Home = ({setScrollI, scrollI, setScrollJ}, props) => {
                     </Link>
                   </div>
             </nav>
-            
-            </div>
-            {
-                show && 
-                <div id="small-screen">
+            <div onClick={()=> setShow(!show)} className="burger">
+                  <img onClick={()=> setShow(!show)} id="toggle" src={show === true ? 'https://cdn1.iconfinder.com/data/icons/chunk/16/X-64.png' : 'https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-64.png'} alt="close/open" />
+                  </div>
+            </div> 
+            <div className={!show && 'borrid'} id="small-screen">
             <div>
                     <Link to="/">
                         Home
@@ -120,29 +117,26 @@ const Home = ({setScrollI, scrollI, setScrollJ}, props) => {
                     </button>
                 </Link>
             </div>
-            }
         </header>
+        
+        <div id="bigx">
+        <section className="sec-x">
+          <iframe title="The Relief Project" autoPlay="true" src="https://drive.google.com/file/d/1hkHwXaJM1ZgSLjuOC-RGdaRIqdFilLyt/preview" width="100%" height="600" allow="autoplay"></iframe>
+        </section>
+        </div>
+        <div id="smallx">
+        <section className="sec-x">
+          <iframe title="The Relief Project" src="https://drive.google.com/file/d/1hkHwXaJM1ZgSLjuOC-RGdaRIqdFilLyt/preview" width="100%" height="350" allow="autoplay"></iframe>
+        </section>
+        </div>
         <section className="sec-1">
           <div className="container">
-            <div className="left">
-              <p className="big"> The Relief Project</p>
-            </div>
             <div className="right">
               <h1>Transforming Lives, One Act of Kindness at a Time</h1>
               <p className="here">At The Relief Project, we are committed to making meaningful impact on the lives of those in need. Rooted in compassion and driven by a shared vision of positive change. <br /> The world is desperately in need of humanity, and for those who are struggling to makes ends meet, we must be there.</p>
             </div>
           </div>
         </section>
-        <div id="bigx">
-        <section className="sec-x">
-          <iframe src="https://drive.google.com/file/d/1hkHwXaJM1ZgSLjuOC-RGdaRIqdFilLyt/preview" width="90%" height="500" allow="autoplay"></iframe>
-        </section>
-        </div>
-        <div id="smallx">
-        <section className="sec-x">
-          <iframe src="https://drive.google.com/file/d/1hkHwXaJM1ZgSLjuOC-RGdaRIqdFilLyt/preview" width="90%" height="300" allow="autoplay"></iframe>
-        </section>
-        </div>
         <section className="sec-4">
           <div ref={aboutRef} className="container">
           <div className="hold hold-2">
@@ -159,13 +153,13 @@ const Home = ({setScrollI, scrollI, setScrollJ}, props) => {
             <div className="hold oran">
               <img src="./assets/wwd1.png" alt="Man" className="image" />
               <Leads
-                title={'Women and Child Welfare'}
+                head={'Women and Child Welfare'}
                 first="While our relief projects benefit the entire community, we prioritize addressing the unique needs of women and children in riverine communities. Recognizing their vulnerabilities, our interventions are designed to enhance the well-being and resilience of these populations."
               />
             </div>
             <div className="hold oran hold-2">
               <Leads
-                title={'Health and Well-being'}
+                head={'Health and Well-being'}
                 first="Supporting healthcare initiatives is crucial for enhancing community well-being. As advocated for body and mind wellness, we invite trained medical personnel to drive medical outreaches at our communities."
                 second="Our commitment extends to proactive measures like vaccinations and disease prevention to safeguard the overall health of the communities."
               />
@@ -174,32 +168,32 @@ const Home = ({setScrollI, scrollI, setScrollJ}, props) => {
             <div className="hold oran">
               <img src="./assets/wwd3.png" alt="Man" className="image" />
               <Leads
-                title={'Education and Empowerment'}
+                head={'Education and Empowerment'}
                 first="In keeping with our commitment to enhance individual and collective growth, vocational empowerment and educational scholarships are provided to the indigents as available."
               />
             </div>
-            <div className="hold oran hold-2">
-              <Leads
-                title={'Transforming Lives, One Act of Kindness at a Time'}
-                first="The world is desperately in need of humanity, and for those who are struggling to make ends meet, hoping for a joy break, or even trying to find some meaning, we try our best to be there. We take every opportunity to invest joy into the lives of the people we come across; whether through a christmas party, a listening ear, or an offer of employment."
-                second="At The Relief Project, we are committed to being humane."
-              />
-              <img src="./assets/xpp82.png" alt="Man" className="image" />
-            </div>
-            <div ref={whatRef} className="hold">
-              <img id="imagee" src="./assets/hope.png" alt="Man" className="image" />
+            <div ref={whatRef} className="hold hold-2">
               <Leads
                 title={'What do we hope to Achieve?'}
                 first="To empower women and children in low-income communities to be all that they can be, at school, at home and in their day to day activities"
               />
+              <img id="imagee" src="./assets/hope.png" alt="Man" className="image" />
             </div>
-          </div>
-        </section>
+            </div>
+          </section>
+          <section className="sec-qqq">
+            <div className="container">
+            <p>The world is desperately in need of humanity, and for those who are struggling to make ends meet, hoping for a joy break or even trying to find some meaning, we try our best to be there.</p>
+            <p>We take every opportunity of even trying to find some meaning, we try our best to be there.</p>
+            <p>At The Relief Project, we are commited to being humane.</p>
+            </div>
+          </section>
         <section className="sec-j">
           <div className="container">
+            <h2>Our Foot Print.</h2>
             <div className="stats">
               <Stats number={8-1} text={'Communities'}/>
-              <Stats number={5-1} text={'Indigents'}/>
+              <Stats number={5000-1} text={'Indigents'}/>
               <Stats number={40-1} text={'Volunteers'}/>
             </div>
           </div>
@@ -211,8 +205,6 @@ const Home = ({setScrollI, scrollI, setScrollJ}, props) => {
               <Capabilities image="./assets/v1.png" head="Love" text="Embracing compassion and empathy, we believe in the transformative power of love. It is the driving force behind every action, creating a positive impact on the lives of those in need." />
               <Capabilities image="./assets/v2.png" head="Service" text="Committed to selfless service, we dedicate ourselves to uplifting communities. Through acts of kindness and dedication, we strive to make a meaningful difference in the lives of the underserved." />
               <Capabilities image="./assets/v3.png" head="Equality" text="Advocating for justice and fairness, we stand firmly for equality. Everyone deserves access to opportunities, resources, and respect, fostering a world where every individual is valued."/>
-            </div>
-            <div className="flex">
               <Capabilities image="./assets/v4.png" head="Community" text="Nurturing a sense of belonging, we celebrate the strength of community. Together, we create supportive networks that empower individuals and foster an environment where everyone can thrive." />
               <Capabilities image="./assets/v5.png" head="Collaboration" text="Believing in the power of teamwork, we actively collaborate with partners and communities. Through shared efforts, we amplify our impact, working hand in hand to create lasting positive change." />
             </div>
@@ -220,12 +212,12 @@ const Home = ({setScrollI, scrollI, setScrollJ}, props) => {
         </section>
         <section className="sec-q">
           <div className="container">
-            <h6 id="ooo">Our Partners</h6>
+            <h6>Our Partners</h6>
           </div>
-            <marquee>
+            <marquee scrolldelay="60" alternate>
             <div className="part">
             <Part img="./assets/partners/molfix.jpeg" text="Molfix"/>
-            <Part img="./assets/partners/moped.jpeg" text="Moped"/>
+            <Part img="./assets/partners/moped.jpeg" text="Molped"/>
             <Part img="./assets/partners/LOGO.svg" text="My Medicine"/>
             <Part img="./assets/partners/sanitary.jpeg" text="SanitaryAid"/>
             <Part img="./assets/partners/advantage.jpeg" text="Advantage Health Africa"/>
@@ -299,20 +291,15 @@ const Home = ({setScrollI, scrollI, setScrollJ}, props) => {
           </Carousel>
           </div>
         </div>
-        <div className="hold-1">
-          <Link to="/donate">
-          <p className="donate">
-            Donate
-            <img src="./assets/Vector.png" alt="Donate" />
-          </p>
-          </Link>
-        </div>
       </section>
       <section className="sec-5">
         <div className="left">
           <div className="container voluunterHome">
-          <p style={{textAlign: 'left'}} id="become">Want to Volunteer? <br /> We would love to have you!</p>
-          <p className="lastChild">Join us today to create a better life and future.</p>
+          <p style={{textAlign: 'left'}} id="become">Want to Donate?</p>
+          <Link to="/donate"><div className="getStarted">Donate <img src="./assets/Forward.png" alt="forward" /></div></Link>
+          </div>
+          <div className="container voluunterHome">
+          <p style={{textAlign: 'left'}} id="become">Want to Volunteer?</p>
           <Link to="/volunteer"><div className="getStarted">Get Started <img src="./assets/Forward.png" alt="forward" /></div></Link>
           </div>
         </div>

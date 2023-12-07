@@ -14,7 +14,7 @@ const Stats = ({ number, text }) => {
           }
           return prevCount + 1;
         });
-      }, 100); // Set the animation interval in milliseconds (10 for 100 FPS)
+      }, 1); // Set the animation interval in milliseconds (10 for 100 FPS)
     };
 
     // Start the animation when the element enters the viewport

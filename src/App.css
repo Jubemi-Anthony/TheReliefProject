@@ -1,3 +1,7 @@
+@font-face {
+  font-family: 'NexaRegular';
+  src: url('../public/assets/fonts/Nexa\ Regular.otf'); /* Replace with the actual path to your NexaRegular.otf file */
+}
 :root {
   --main-color: #FF9A00;
   --primary-color:#b46e05;
@@ -6,9 +10,10 @@
   --white-blue: rgba(255, 153, 0, 0.1);
   --white-variant1: #FCFCFC;
   --black: #2b2b2b;
-  --Gotham: 'Gotham', sans-serif;
-  --Mecury: 'Mecury Display';
+  --Gotham: 'NexaRegular', sans-serif;
+  --Mecury: 'NexaRegular';
 }
+
 *{
   margin: 0;
   padding: 0;

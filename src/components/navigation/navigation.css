@@ -13,8 +13,18 @@ header .container{
 header .logo{
     width: 10%;
 }
+header .active{
+    border-bottom: 2px solid var(--main-color);
+}
+header .notActive{
+    border-bottom: 2px solid var(--white);
+}
+header .active, header .notActive{
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
 nav{
-    width: 80%;
+    width: 69%;
     margin-left: auto;
     display: flex;
     justify-content: space-between;
@@ -23,51 +33,43 @@ nav{
 nav a{
     color: var(--black);
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    padding-bottom: 10px;
 }
 header button{
     background-color: var(--main-color);
     color: var(--white);
     border: none;
-    width: 150px;
+    width: 225px;
     height: 48px;
+    font-size: 1.3rem;
+    font-family: var(--Gotham);
 }
 header .right{
     display: flex;
     align-items: center;
     gap: 15px;
 }
-header .cart{
-    position: relative;
-}
-header .cart div{
-    font-size: 13px;
-    width: 19px;
-    height: 19px;
-    background-color: var(--primary-color);
-    border-radius: 50px;
-    border: none;
-    display: flex;
-    color: var(--white);
-    padding: 2px;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: -5px;
-    right: -5px;
-}
 header .burger, #small-screen{
     display: none;
+}
+header .loggo a{
+    display: block;
+    width: 100%;
+}
+header .loggo a img{
+    width: 60%;
 }
 @media(max-width: 700px){
     header{
         position: relative;
+        padding: 0;
     }
     header .container{
-        padding-bottom: 10px;
+        padding-bottom: 0px;
     }
     header button{
-        background-color: var(--primary-color);
+        background-color: transparent;
         color: var(--white);
         border: none;
         width: 100%;
@@ -86,22 +88,41 @@ header .burger, #small-screen{
     }
     #small-screen{
         display: block;
-        background-color: var(--main-color);
+        background-color: var(--white);
         position: absolute;
-        right: 0;
-        top: 60px;
-        text-align: right;
-        padding: 10px;
+        left: 0;
+        top: 0;
+        padding: 0 20px;
+        padding-top: 40%;
+        height: 100vh;
+        width: 100vw;
+        z-index: 5;
+        transition: 0.5s;
+    }
+    .borrid{
+        transform: translateX(-110%);
+    }
+    header #toggle{
+        /* filter: invert(1); */
+        position: absolute;
+        z-index: 10;
     }
     #small-screen a{
-        color: var(--white);
+        color: var(--black);
         text-decoration: none;
         display: inline-block;
-        margin-bottom: 9px;
-        border-bottom: 1px solid var(--white);
+        margin-bottom: 40px;
+        font-size: 1.5rem;
+        border-bottom: 1px solid var(--black);
+        width: 100%;
     }
     #small-screen button{
+        font-size: 1.5rem;
         width: 100px;
         height: 30px;
+        color: var(--black);
+        width: 100%;
+        justify-content: flex-start;
+        text-align: left;
     }
 }
