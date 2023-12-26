@@ -6,6 +6,7 @@ import Project from "./pages/Project/Project";
 import Donate from "./pages/Donate/Donate";
 import { useState} from "react";
 import Volunteer from "./pages/Volunteer/Volunteer";
+import ADMIN from "./pages/ADMIN/ADMIN";
 
 function App() {
   const [scrollI, setScrollI] = useState(null);
@@ -18,6 +19,7 @@ function App() {
         <Route path="project" element= {<Project scrollJ={scrollJ} setScrollI={setScrollI} setScrollJ={setScrollJ}/>}/>
         <Route path="donate" element= {<Donate setScrollI={setScrollI} setScrollJ={setScrollJ}/>} />
         <Route path="volunteer" element= {<Volunteer setScrollI={setScrollI} setScrollJ={setScrollJ}/>} />
+        <Route path = "admin" element= {<ADMIN/>} />
       </Routes>
     </div>
   );

@@ -216,15 +216,14 @@ const Home = ({setScrollI, scrollI, setScrollJ}, props) => {
           </div>
             <marquee scrolldelay="60" alternate>
             <div className="part">
-            <Part img="./assets/partners/molfix.jpeg" text="Molfix"/>
-            <Part img="./assets/partners/moped.jpeg" text="Molped"/>
+            <Part img="./assets/partners/molfix.png" text="Molfix"/>
+            <Part img="./assets/partners/moped.png" text="Molped"/>
             <Part img="./assets/partners/LOGO.svg" text="My Medicine"/>
-            <Part img="./assets/partners/sanitary.jpeg" text="SanitaryAid"/>
-            <Part img="./assets/partners/advantage.jpeg" text="Advantage Health Africa"/>
+            <Part img="./assets/partners/sanitary.png" text="SanitaryAid"/>
+            <Part img="./assets/partners/advantage.png" text="Advantage Health Africa"/>
             </div>
             </marquee>
         </section>
-        <div id="paul"></div>
         <section className="sec-4">
         <div className="container">
           <h2  style={{textAlign: 'center', marginBottom: '20px'}}>Our Work So Far</h2>

@@ -71,11 +71,10 @@ header .logo{
 }
 #About .sec-j{
     padding: 40px 0;
-    background-color: rgb(92, 92, 92);
     text-align: center;
 }
 #About .sec-j h2{
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     text-align: center;
     margin: auto;
     margin-bottom: 25px;
@@ -87,11 +86,10 @@ header .logo{
     text-align: center;
 }
 #About .stat{
-    color: var(--white);
-    width: 211px;
-    height: 93px;
+    color: var(--black);
+    text-align: center;
     font-weight: 700;
-    font-size: 40px;
+    font-size: 4rem;
 }
 
 #About .stat p:last-child{
@@ -99,10 +97,9 @@ header .logo{
     color: var(--main-color);
 }
 #About .sec-3{
-    background-color: var(--white);
-    padding-top: 30px;
+    padding-top: 40px;
     margin-bottom: 50px;
-    border-bottom: 10px solid var(--black);
+    background-color: rgb(92, 92, 92);
 }
 #About .sec-3 .flex{
     display: flex;
@@ -112,13 +109,15 @@ header .logo{
 }
 #About .sec-3 .grid{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-row-gap: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 #About .sec-3 h2{
-    color: var(--black);
-    font-size: 3.5rem;
+    color: var(--main-color);
+    font-size: 2.5rem;
     text-align: center;
+    width: 100%;
 }
 #Capabilities{
     display: flex;
@@ -139,6 +138,10 @@ header .logo{
     color: var(--primary-color);
     font-weight: 600;
 }
+#Capabilities img{
+    width: 110px;
+    height: 90px;
+}
 #About .sec-4 .hold{
     margin: auto;
     display: flex;
@@ -149,13 +152,17 @@ header .logo{
 }
 #About .sec-4 .hold .image{
     width: 40%;
-    height: 344px;
+    height: max-content;
     box-shadow: -25px -30px 0px var(--main-color);
 }
 #About .sec-4 .hold-2 .image{
     box-shadow: 25px -30px 0px var(--main-color);
 }
-
+#About .sec-4 h2{
+    text-align: center;
+    margin: auto;
+    font-size: 2.5rem;
+}
 #About .sec-4 .hold #imagee{
     width: 36%;
     margin-right: 1%;
@@ -244,7 +251,6 @@ header .logo{
     font-size: 32px;
     color: var(--main-color);
     border-top: 2px solid;
-    border-bottom: 2px solid;
     border-color: var(--main-color);
     display: flex;
     justify-content: center;
@@ -301,7 +307,7 @@ header .logo{
     display: none;
 }
 #About .sec-q{
-    border-bottom: 10px solid var(--black);
+    /* background-color: rgb(92, 92, 92); */
 }
 #About .sec-q .container{
     width: 90%;
@@ -321,16 +327,17 @@ header .logo{
     gap: 20px;
 }
 #About .sec-q .part .partners img{
-    width: 200px;
-    height: 200px;
+    width: 155px;
+    height: 155px;
 }
 #About .sec-q .part .partners h3{
     color: var(--black);
     font-size: 1.5rem;
 }
 #About h6{
-    font-size: 2rem;
-    color: var(--black);
+    padding-top: 20px;
+    font-size: 2.5rem;
+    color: var(--main-color);
     text-align: center;
     margin-bottom: 30px;    
 }

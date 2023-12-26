@@ -84,6 +84,7 @@ const Donate = () => {
   return (
     <main id="Donate">
         {loading !== 'blank' && <Modal setLoading={setLoading} loading={loading} text={'Thank you for Donating'}/>}
+
         <section className="main-left">
             <div className="container">
                 <div className="top-head">
