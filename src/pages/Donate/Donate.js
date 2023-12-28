@@ -1,18 +1,35 @@
 import { Link } from "react-router-dom";
-import Footer from "../../components/footer/Footer";
 import "./Donate.css";
 import { useState, useEffect } from "react";
 // import PaystackProp from "@paystack/inline-js";
 import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
 import "../../Data/firebaseConfig";
-import{getFirestore, addDoc, collection} from "firebase/firestore";
+import{getFirestore, addDoc, collection, getDocs} from "firebase/firestore";
 import Modal from '../../components/Modal/Modal';
 import Button from "../../components/Button";
 
 const Donate = () => {
+    const [donations, setDonations] = useState([])
+    let raised = 0;
+    const [transacted, setTransacted] = useState(false)
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, [])
+        const fetchDonations = async () =>{
+            const querySnapShot = await(getDocs(collection(db, "Transactions")));
+            const tempoaryArr = []
+            querySnapShot.forEach((doc) => (
+                tempoaryArr.push(doc.data())
+            ))
+            setDonations(tempoaryArr);
+            
+        }
+        fetchDonations()
+    }, [transacted])
+
+    donations.map(temp => {
+        raised += temp?.amount;
+    })
+    console.log(raised);
     const [loading, setLoading] = useState('blank');
     
     const [email, setEmail] = useState('');
@@ -23,8 +40,6 @@ const Donate = () => {
     const [showDonate, setShowDonate] = useState(false);
     const db = getFirestore();
 
-
-    const [status, setStatus] = useState(0)
     const sendToDatabase = async(e,n,a,r)=>{
         const docRef = await addDoc(collection(db, "Transactions"), {
             email: e,
@@ -70,6 +85,7 @@ const Donate = () => {
                 setFirstName('');
                 setEmail('');
                 setComment('');
+                setTransacted(!transacted)
             }else{
                 alert('Not Comppleted!')
             }
@@ -79,7 +95,7 @@ const Donate = () => {
         });
     }
 
-    const widthRange = (status/1000000) * 100;
+    const widthRange = (raised/1000000) * 100;
 
   return (
     <main id="Donate">
@@ -101,7 +117,7 @@ const Donate = () => {
                     <section>
                     <div className="range"><div className="value" style={{width: `${widthRange}%`}}></div></div>
                     <div className="gotten">
-                        <p>₦{status} <span>raised</span></p>
+                        <p>₦{raised} <span>raised</span></p>
                         <p>₦1,000,000</p>
                     </div>
                     </section>
@@ -110,10 +126,14 @@ const Donate = () => {
                 <div className="end-body">
                     <h3>Recent donations</h3>
                     <div className="donations000">
-                        {/* <div className="s000">
-                            <p><span>Jubemi Anthony</span> made their regular donation</p>
-                            <p>₦1,000</p>
-                        </div> */}
+                        {
+                            donations.map((donate)=>(
+                                <div key={donate?.reference} className="s000">
+                                    <p><span>{donate?.name}</span> made their regular donation</p>
+                                    <p>{donate?.amount}</p>
+                                </div>
+                            ))
+                        }
                     </div>
                 </div>
             </div>

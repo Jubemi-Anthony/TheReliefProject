@@ -19,7 +19,7 @@ function App() {
         <Route path="project" element= {<Project scrollJ={scrollJ} setScrollI={setScrollI} setScrollJ={setScrollJ}/>}/>
         <Route path="donate" element= {<Donate setScrollI={setScrollI} setScrollJ={setScrollJ}/>} />
         <Route path="volunteer" element= {<Volunteer setScrollI={setScrollI} setScrollJ={setScrollJ}/>} />
-        <Route path = "admin" element= {<ADMIN/>} />
+        <Route path = "admin-00-4112310310-xx" element= {<ADMIN/>} />
       </Routes>
     </div>
   );

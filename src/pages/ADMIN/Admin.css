@@ -67,3 +67,15 @@
 	font-size:15px;
 	margin-right:10px;
 }
+
+#comments .options{
+	display: flex;
+	gap: 30px;
+}
+#comments .orange,#comments .NOTHING{
+	color: var(--main-color);
+}
+#comments .NOTHING{
+	margin-top: 50px;
+	font-size: 3rem;
+}
