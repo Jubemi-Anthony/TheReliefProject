@@ -1,14 +1,17 @@
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/navigation/Navigation";
 import "./Contact.css";
-import { useState, useEffect} from "react";
+import { useState, useEffect, useRef} from "react";
 import "../../Data/firebaseConfig";
 import{getFirestore, addDoc, collection} from "firebase/firestore";
 import Modal from '../../components/Modal/Modal';
+import emailjs from '@emailjs/browser';
 
 const Contact = ({setScrollI,setScrollJ}) => {
     const [loading, setLoading] = useState('blank');
     const [choice, setChoice] = useState('email');
+
+    const form = useRef();
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -21,8 +24,7 @@ const Contact = ({setScrollI,setScrollJ}) => {
         date: Date.now()
     }) 
     const db = getFirestore();
-    const sendToDatabase = async(e)=>{
-        e.preventDefault();
+    const sendToDatabase = async()=>{
         setLoading('loading');
         const docRef = await addDoc(collection(db, "Contacts"), message)
         setLoading('done');
@@ -33,6 +35,21 @@ const Contact = ({setScrollI,setScrollJ}) => {
             message: '',
             date: Date.now()
         })
+    }
+
+    const sendEmail = () => {
+        emailjs.sendForm(process.env.REACT_APP_EMAILJS_PROJECT_ID, process.env.REACT_APP_EMAILJS_EMAIL_TEMPLATE_CONTACT, form.current, process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
+          .then((result) => {
+              console.log(result.text);
+          }, (error) => {
+              console.log(error.text);
+          });
+      };
+
+    const doBoth = (e)=>{
+        e.preventDefault();
+        sendEmail()
+        sendToDatabase()
     }
   return (
     <main id="Contact">
@@ -58,10 +75,10 @@ const Contact = ({setScrollI,setScrollJ}) => {
                     </div>
                 </div>
                 <div className="right">
-                    <form onSubmit={sendToDatabase}>
+                    <form ref={form} onSubmit={doBoth}>
                         <div className="group">
                             <label>Full Name</label>
-                            <input required type="text" value={message.firstName}  onChange={(e)=> setMessage({...message, firstName: e.target.value})} placeholder="Enter Full Name" />
+                            <input required type="text" name="firstName" value={message.firstName}  onChange={(e)=> setMessage({...message, firstName: e.target.value})} placeholder="Enter Full Name" />
                         </div>
                         <div className="group">
                             <label>How do you want us to contact you?</label>
@@ -76,12 +93,12 @@ const Contact = ({setScrollI,setScrollJ}) => {
                                 </div>
                             </div>
                             {
-                                choice === 'email'? <input required type="email"  value={message.email} onChange={(e)=> setMessage({...message, email: e.target.value })} placeholder="Email" />:<input required type="tel"  value={message.email} onChange={(e)=> setMessage({...message, email: e.target.value })} placeholder="Phone Number" />
+                                choice === 'email'? <input required name="email" type="email"  value={message.email} onChange={(e)=> setMessage({...message, email: e.target.value })} placeholder="Email" />:<input name="email" required type="tel"  value={message.email} onChange={(e)=> setMessage({...message, email: e.target.value })} placeholder="Phone Number" />
                             }
                         </div>
                         <div className="group">
                             <label>Message</label>
-                            <textarea required placeholder="Drop a message" value={message.message}  onChange={(e)=> setMessage({...message, message: e.target.value })} cols="30" rows="10"/>
+                            <textarea required name="message" placeholder="Drop a message" value={message.message}  onChange={(e)=> setMessage({...message, message: e.target.value })} cols="30" rows="10"/>
                         </div>
                         <button>
                             Send Message
